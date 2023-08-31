@@ -1,8 +1,21 @@
 #include "stack.cpp"
-
-int main(){
-    std::string expression = "(2 + 3) * (4 & 7)";    
-    //std::string expression = "(2 + 3) * ( (4 & 7";    
+/*
+    Ejemplo a evaluar
+    Validación de paréntesis en expresiones
+    matemáticas: 
+    Al analizar expresiones matemáticas, 
+    puedes usar una pila para verificar 
+    si los paréntesis están balanceados
+    correctamente. 
+    Cada vez que encuentras un paréntesis de apertura,
+    lo agregas a la pila.
+    Cuando encuentras un paréntesis de cierre,
+    retiras un paréntesis de apertura de la pila.
+    Si la pila está vacía al final del análisis,
+    los paréntesis están balanceados.
+*/
+int main(){    //std::string expression = "(2 + 3) * (4- 7)";    
+    std::string expression = "(2 + 3) * ( (4 & 7";    
     StackC obj_stack(expression.length());
     bool resp = obj_stack.validatExpression(expression);
     if(resp)

@@ -43,7 +43,7 @@ class ColaLineal{
                return final == MAXTAMQ -1;
         }
         void mostrarCola(){
-            for(int i=0; i<MAXTAMQ; i++){
+            for(int i=frente; i<final + 1; i++){
                 std::cout<<listaCola[i]<<std::endl;
             }
         }

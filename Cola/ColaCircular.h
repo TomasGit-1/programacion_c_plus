@@ -10,13 +10,14 @@ class ColaCircular : public ColaLineal{
             frente = 0;
             final = MAXTAMQ - 1;
         }
-        void insertar(conts TipoDeDato& elmento);
+        void insertar(const TipoDeDato& elmento);
         TipoDeDato quitar();
         void borrarCola();
         TipoDeDato frenteCola();
         bool colaVacia();
-        bool colaLlena();       
-}
+        bool colaLlena(); 
+        void mostrarCola();      
+};
 
 //Implementacion
 
@@ -25,7 +26,7 @@ void ColaCircular :: insertar(const TipoDeDato & elemento){
         throw "Overflow en la cola";
     final = siguiente(final);
     listaCola[final] = elemento;
-}
+};
 
 TipoDeDato ColaCircular :: quitar(){
     if(colaVacia()){
@@ -34,25 +35,28 @@ TipoDeDato ColaCircular :: quitar(){
     TipoDeDato tm = listaCola[frente];
     frente = siguiente(frente);
     return tm;    
-}
+};
 
 void ColaCircular :: borrarCola(){
     frente = 0;
     final = MAXTAMQ - 1;
-}
+};
 
 TipoDeDato ColaCircular :: frenteCola(){
     if (colaVacia())
         throw "Cola vacia";
     return listaCola[frente];
-}
+};
 
-bool colaCircular :: colaVacia(){
+bool ColaCircular :: colaVacia(){
     return frente == siguiente(final);
 }
 
 bool ColaCircular :: colaLlena(){
     return frente == siguiente(siguiente(final));
 }
-
-
+void ColaCircular :: mostrarCola(){
+    for(int i=frente; i<MAXTAMQ - 1; i++){
+        std::cout<<listaCola[i]<<std::endl;
+    }
+}

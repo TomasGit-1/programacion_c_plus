@@ -1,0 +1,6 @@
+Con un archivo de texto se requieren realizar las siguientes acciones: 
+formar una lista de colas,
+de tal forma que cada nodo de la lista este en 
+la direccion de una cola que tienen todas las palabras del archivo que empiezan por una misma letra.
+Visualizar las palabras del archivo , empezando por la cola que contiene las palabras que conmiezan
+por am a continuacion las letra b, y asi sucesivamente.  

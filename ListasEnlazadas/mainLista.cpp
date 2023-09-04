@@ -9,10 +9,9 @@ int main(){
     std::cout<<"Elementos de la lista, Termina con -1 "<<std::endl;
 
     do{
-        if(d != -1){
-            std::cin >> d;
+        std::cin >> d;
+        if(d != -1)
             lista.insertarCabezaLista(d);
-        }
     }while(d != -1);
     //Recorre la lista para escribir susu elementos
     std::cout<<"Elementos de la lista generados al azar" << std::endl;

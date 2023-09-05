@@ -1,5 +1,5 @@
-template <class T>
-class ColaGenerica{
+#include <iostream>
+template <class T> class ColaGenerica{
     protected:
         class NodoCola{
             public:     
@@ -7,7 +7,7 @@ class ColaGenerica{
                 T elemento;
                 NodoCola(T x){
                     elemento = x;
-                    siguiente = NULL;
+                    siguiente = nullptr;
                 }
         };
         NodoCola* frente;
@@ -15,29 +15,30 @@ class ColaGenerica{
 
     public:
         ColaGenerica(){
-            frente = final = NULL;   
+            frente = final = nullptr;   
         }
         void insertar(T elemento);
         T quitar();
         void borrarCola();
         T frenteCola() const ;
         bool colaVacia() const;
+        void mostrarCola() const;
         ~ColaGenerica(){
             borrarCola ();
         }
 };
 
-void ColaGenerica<T> :: insertar(T elemento){
+template <class T> void ColaGenerica<T> :: insertar(T elemento){
     NodoCola* nuevo;
     nuevo = new NodoCola(elemento);
     if(colaVacia())
         frente = nuevo;
     else
         final -> siguiente = nuevo;
-    final = Nuevo;
+    final = nuevo;
 }
 
-T ColaGenerica<T> :: quitar(){
+template <class T> T ColaGenerica<T> :: quitar(){
     if(colaVacia())
         throw "Cola vacia, no se puede extraer";
     T aux = frente -> siguiente;
@@ -45,27 +46,35 @@ T ColaGenerica<T> :: quitar(){
     frente = frente -> siguiente;
     delete a;
     return aux;
-}
+};
 
-T ColaGenerica<T> :: frenteCola() const {
+template <class T> T ColaGenerica<T> :: frenteCola() const {
     if (colaVacia())
         throw "Cola vacia";
     return frente -> elemento;
-}
+};
 
-void ColaGenerica<T> :: borrarCola(){
-    for (;frente != NULL;){
+template <class T> void ColaGenerica<T> :: borrarCola(){
+    for (;frente != nullptr;){
         NodoCola* a;
         a = frente;
         frente = frente -> siguiente;
         delete a;
     }
-    final = NULL;
-}
+    final = nullptr;
+};
 
-bool ColaGenerica<T> :: colaVacia() const { 
-    return frente == NULL;
-}
+template <class T> bool ColaGenerica<T> :: colaVacia() const { 
+    return frente == nullptr;
+};
 
+template <class T> void ColaGenerica<T> :: mostrarCola() const{
+    NodoCola* actual;
+    actual = frente;
+    while(actual != NULL){
+        std::cout<<actual->elemento<<std::endl;
+        actual = actual->siguiente;
+    };
+};
 
 

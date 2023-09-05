@@ -24,7 +24,7 @@ int main(){
     
     while (std::getline(file_content, line)){
         colaGPalabras.insertar(line);
-        std::cout << line << std::endl;        
+        //std::cout << line << std::endl;        
     }
     file_content.close();
 

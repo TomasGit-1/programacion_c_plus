@@ -44,7 +44,7 @@ template <class T> void ColaGenerica<T> :: insertar(T elemento){
 template <class T> T ColaGenerica<T> :: quitar(){
     if(colaVacia())
         throw "Cola vacia, no se puede extraer";
-    T aux = frente -> siguiente;
+    T aux = frente -> elemento;
     NodoCola* a = frente;
     frente = frente -> siguiente;
     delete a;

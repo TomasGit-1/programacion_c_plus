@@ -7,7 +7,7 @@ template <class T> class ColaGenerica{
                 T elemento;
                 NodoCola(T x){
                     elemento = x;
-                    siguiente = nullptr;
+                    siguiente = NULL;
                 }
         };
         NodoCola* frente;
@@ -15,7 +15,7 @@ template <class T> class ColaGenerica{
 
     public:
         ColaGenerica(){
-            frente = final = nullptr;   
+            frente = final = NULL;   
         }
         void insertar(T elemento);
         T quitar();
@@ -41,7 +41,7 @@ template <class T> void ColaGenerica<T> :: insertar(T elemento){
 template <class T> T ColaGenerica<T> :: quitar(){
     if(colaVacia())
         throw "Cola vacia, no se puede extraer";
-    T aux = frente -> siguiente;
+    T aux = frente -> elemento;
     NodoCola* a = frente;
     frente = frente -> siguiente;
     delete a;
@@ -55,17 +55,17 @@ template <class T> T ColaGenerica<T> :: frenteCola() const {
 };
 
 template <class T> void ColaGenerica<T> :: borrarCola(){
-    for (;frente != nullptr;){
+    for (;frente != NULL;){
         NodoCola* a;
         a = frente;
         frente = frente -> siguiente;
         delete a;
     }
-    final = nullptr;
+    final = NULL;
 };
 
 template <class T> bool ColaGenerica<T> :: colaVacia() const { 
-    return frente == nullptr;
+    return frente == NULL;
 };
 
 template <class T> void ColaGenerica<T> :: mostrarCola() const{

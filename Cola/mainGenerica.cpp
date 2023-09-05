@@ -15,10 +15,8 @@ int main(){
     colaG1.insertar("Ho");
     colaG1.insertar("H");
     colaG1.mostrarCola();
-
-
-
-
-
+    colaG1.insertar("HO");
+    colaG1.mostrarCola();
+    colaG1.quitar();
     return 0;
 }

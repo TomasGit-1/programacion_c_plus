@@ -1,13 +1,14 @@
 #include <fstream>
 #include "colaGenerica.h"
 #include "fileController.h"
-#include "Lista.h"    
+#include "Lista.h" 
+#include <vector>   
 template <class T> 
 T elementoEnFrente;
 int main(){
     FileController obj_file;
     Lista lista_direcciones;
-    int* arrayDePunteros[5]; 
+     ColaGenerica<std::string>* arrayDePunteros[5]; 
     //Palabras
     ColaGenerica<std::string>colaGPalabras;
     
@@ -27,10 +28,52 @@ int main(){
     }
     file_content.close();
 
-    for(int i=0; i<5; i++){
+
+    ColaGenerica<std::string>colaGA;
+    arrayDePunteros[0] = &colaGA;
+    ColaGenerica<std::string>colaGC;
+    arrayDePunteros[1] = &colaGC;
+    ColaGenerica<std::string>colaGM;
+    arrayDePunteros[2] = &colaGM;
+    ColaGenerica<std::string>colaGD;
+    arrayDePunteros[3] = &colaGD;
+    ColaGenerica<std::string>colaGG;
+    arrayDePunteros[4] = &colaGG;
+
+
+
+    for(int i=0; i<14; i++){
         elementoEnFrente<std::string> = colaGPalabras.frenteCola();
-        std::cout << "El elemento en frente de la cola de palabras es: " << elementoEnFrente<std::string> << std::endl;
+        //std::cout << "El elemento en frente de la cola de palabras es: " << elementoEnFrente<std::string>[0] << std::endl;
+        switch (elementoEnFrente<std::string>[0]){
+        case 'A':
+            /* code */
+            arrayDePunteros[0]->insertar(elementoEnFrente<std::string>);
+            break;
+        case 'C':
+            /* code */
+            arrayDePunteros[1]->insertar(elementoEnFrente<std::string>);
+            break;
+        case 'M':
+            /* code */
+            arrayDePunteros[2]->insertar(elementoEnFrente<std::string>);
+            break;
+        case 'D':
+            /* code */
+            arrayDePunteros[3]->insertar(elementoEnFrente<std::string>);
+            break;
+        case 'G':
+            /* code */
+            arrayDePunteros[4]->insertar(elementoEnFrente<std::string>);
+            break;
+        default:
+            break;
+        }
         colaGPalabras.quitar();
+    }
+    for (int i = 0; i <4; i++){
+        arrayDePunteros[i]->mostrarCola();
+        std::cout <<"============================"<<std::endl;
     }
 
 

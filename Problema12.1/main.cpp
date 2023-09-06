@@ -8,7 +8,7 @@ T elementoEnFrente;
 int main(){
     FileController obj_file;
     Lista lista_direcciones;
-     ColaGenerica<std::string>* arrayDePunteros[5]; 
+    ColaGenerica<std::string>* arrayDePunteros[5]; 
     //Palabras
     ColaGenerica<std::string>colaGPalabras;
     

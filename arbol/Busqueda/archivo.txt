@@ -1,0 +1,2 @@
+En el árbol del Ejercicio 16.2, recorrer cada árbol utilizando los órdenes siguientes: NDI,
+DNI, DIN.
